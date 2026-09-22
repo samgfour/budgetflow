@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BudgetFlow</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --card: #1f2937;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #34d399;
+        --accent-2: #60a5fa;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #020817, var(--bg));
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: min(900px, 90vw);
+        background: rgba(17, 24, 39, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(52, 211, 153, 0.12);
+        color: var(--accent);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        margin: 1rem 0 0.75rem;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 14px;
+        padding: 1.25rem;
+      }
+
+      .card h2 {
+        margin-top: 0;
+        font-size: 1.1rem;
+      }
+
+      .links {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      a.button {
+        display: inline-block;
+        padding: 0.9rem 1.3rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      a.button:hover {
+        transform: translateY(-1px);
+        opacity: 0.95;
+      }
+
+      .primary {
+        background: var(--accent);
+        color: #052e2b;
+      }
+
+      .secondary {
+        background: rgba(96, 165, 250, 0.12);
+        color: var(--text);
+        border: 1px solid rgba(96, 165, 250, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="badge">Finance Planner</div>
+      <h1>BudgetFlow</h1>
+      <p>
+        BudgetFlow is a simple Python budgeting tool that helps you split a monthly income using the
+        15/20/30/35 allocation rule: investing, savings, pay-yourself, and expenses.
+      </p>
+
+      <div class="project-grid">
+        <section class="card">
+          <h2>What it does</h2>
+          <p>Calculates how much of your monthly income goes to each category and shows the total allocation.</p>
+        </section>
+
+        <section class="card">
+          <h2>Where the logic lives</h2>
+          <p>The main script is <strong>budgetflow.py</strong>, which contains the income input, calculation, and CLI output.</p>
+        </section>
+
+        <section class="card">
+          <h2>Why it matters</h2>
+          <p>It turns a broad money rule into a quick, easy-to-use budget breakdown you can run from the terminal.</p>
+        </section>
+      </div>
+
+      <div class="links">
+        <a class="button primary" href="budgetflow.py">Open the project script</a>
+        <a class="button secondary" href="https://github.com/samgfour/budgetflow" target="_blank" rel="noreferrer">View repository</a>
+      </div>
+    </main>
+  </body>
+</html>
